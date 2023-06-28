@@ -1,5 +1,6 @@
 import {PAGE_TIMELINE, PAGE_ACTIVITIES, PAGE_PROGRESS, HOURS_IN_DAY} from './constants.js'
 
+// делаем чтобы значение тек. стр-цы соответствовало значению хэша в адресной строке
 export function normalizePageHash() {
   const hash = window.location.hash.slice(1)
   
