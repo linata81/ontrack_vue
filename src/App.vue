@@ -6,20 +6,10 @@ import TheNav from './components/TheNav.vue';
 import TheTimeline from './pages/TheTimeline.vue';
 import TheActivities from './pages/TheActivities.vue';
 import TheProgress from './pages/TheProgress.vue';
+import {normalizePageHash} from './functions'
 
 // делаем чтобы значение тек. стр-цы соответствовало значению хэша в адресной строке
 const currentPage = ref(normalizePageHash())
-
-function normalizePageHash() {
-  const hash = window.location.hash.slice(1)
-  
-  if([PAGE_TIMELINE, PAGE_ACTIVITIES, PAGE_PROGRESS].includes(hash)) {
-    return hash
-  }
-  
-  window.location.hash = PAGE_TIMELINE
-  return PAGE_TIMELINE  
-}
 
 function goTo(page) {
   currentPage.value = page
