@@ -2,7 +2,20 @@
 import BaseButton from './BaseButton.vue';
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 
-defineProps(['selected', 'options', 'placeholder'])
+// defineProps(['selected', 'options', 'placeholder'])
+// более детальная конфигурация для каждого внешнего св-ва
+defineProps({
+  selected: Number,
+  options: {
+    required: true,
+    type:Array,
+  },
+  placeholder:{
+    // default: 'Отдых',
+    required: true,
+    type: String
+  } 
+})
 </script>
 
 <template>
